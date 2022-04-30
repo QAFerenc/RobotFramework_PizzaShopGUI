@@ -28,6 +28,34 @@ Command line parameters for the test cases :
     - Test Added Food :
         -t "Test Added Food" 
         -v TEST_FOOD_NAME:"<food name>"
+        
+    - Delete Specific Food :
+        -t "Delete Specific Food" 
+        -v TEST_FOOD_NAME:"<food name>"
+        
+    - Delete Last Food :
+        -t "Delete Last Food"
+        
+    - Modify Selected Food :
+        -t "Modify Selected Food"      
+        -v OPERATION:"Add" or "Modify" or "Delete"
+        -v TEST_FOOD_NAME:"<food name>"  or -v TEST_FOOD_INDEX:"<food index>" 
+        -v TEST_INGREDIENT_NAME:"<ingredient name>"    # Only at "Delete" and "Edit"
+        -v LIST_OF_INGREDIENTS : "<ingredient name>"   # Only at "Add"
+        
+       # The logic behind differentiating "Delete" and "Edit" from "Add" is that the former 2 operates on an existing receipt, while "Add" handles new data
+         
+
+      
+        
+        - 
+        
+        
+        
+    
+        
+      
+
 
         
     
