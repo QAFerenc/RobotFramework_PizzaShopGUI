@@ -25,18 +25,30 @@ Command line parameters for the test cases :
         -v TEST_FOOD_NAME:"<food name>" 
         -v LIST_OF_INGREDIENTS:"<ingredients>"    # ingredients are comma separated. Eg.: tomato, pepper
         
+        Example : robot -t "Add Food" -v TEST_FOOD_NAME:"Pizza with cheese" -v LIST_OF_INGREDIENTS:"pizza, cheese" TestCases/pizza_shop.robot
+        
     - Test Added Food :
         -t "Test Added Food" 
         -v TEST_FOOD_NAME:"<food name>"
         
+        Example : robot -t "Test Added Food" -v TEST_FOOD_NAME:"Pizza with ham and chese" TestCases/pizza_shop.robot # Assume, Pizza with ham and cheese is in the list
+                  
+                
     - Delete Specific Food :
         -t "Delete Specific Food" 
-        -v TEST_FOOD_NAME:"<food name>"
+        -v TEST_FOOD_NAME:"<food name>"  or -v TEST_FOOD_INDEX:"<food index>"
+        
+        Examples : robot -t "Delete Specific Food" -v TEST_FOOD_NAME:"vajas kifli" TestCases/pizza_shop.robot
+                   robot -t "Delete Specific Food" -v TEST_FOOD_INDEX:"332" TestCases/pizza_shop.robot
+                  
         
     - Delete Last Food :
         -t "Delete Last Food"
         
+        Example : robot -t "Delete Last Food" TestCases/pizza_shop.robot
+        
     - Modify Selected Food :
+    
         -t "Modify Selected Food"      
         -v OPERATION:"Add" or "Modify" or "Delete"
         -v TEST_FOOD_NAME:"<food name>"  or -v TEST_FOOD_INDEX:"<food index>" 
@@ -44,6 +56,27 @@ Command line parameters for the test cases :
         -v LIST_OF_INGREDIENTS : "<ingredient name>"   # Only at "Add"
         
        # The logic behind differentiating "Delete" and "Edit" from "Add" is that the former 2 operates on an existing receipt, while "Add" handles new data
+       
+     Examples : 
+             Add ingredient : 
+             
+                    robot -t "Modify Selected Food" -v OPERATION:"Add" -v TEST_FOOD_INDEX:"340" -v LIST_OF_INGREDIENTS:"extra cheese" TestCases/pizza_shop.robot
+                    robot -t "Modify Selected Food" -v OPERATION:"Add" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v LIST_OF_INGREDIENTS:"plus cheese" TestCases/pizza_shop.robot     
+             
+             Modify ingredient : 
+             
+                    robot -t "Modify Selected Food" -v OPERATION:"Edit" -v TEST_FOOD_INDEX:"340" -v TEST_INGREDIENT_NAME:"extra cheese" -v LIST_OF_INGREDIENTS:"no more ingredient" TestCases/pizza_shop.robot
+                    robot -t "Modify Selected Food" -v OPERATION:"Edit" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v TEST_INGREDIENT_NAME:"ham" -v LIST_OF_INGREDIENTS:"serrano ham" TestCases/pizza_shop.robot
+             
+             Delete ingredient : 
+             
+                    robot -t "Modify Selected Food" -v OPERATION:"Delete" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v TEST_INGREDIENT_NAME:"serrano ham" TestCases/pizza_shop.robot
+                    robot -t "Modify Selected Food" -v OPERATION:"Delete" -v TEST_FOOD_INDEX:"340" -v TEST_INGREDIENT_NAME:"plus cheese" TestCases/pizza_shop.robot
+                    
+              
+       
+       
+       
          
 
       
