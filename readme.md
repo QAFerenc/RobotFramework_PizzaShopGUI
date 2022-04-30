@@ -58,15 +58,16 @@ Command line parameters for the test cases :
        # The logic behind differentiating "Delete" and "Edit" from "Add" is that the former 2 operates on an existing receipt, while "Add" handles new data
        
      Examples : 
+     
              Add ingredient : 
-             
+                    robot -t "Modify Selected Food" -v OPERATION:"Add" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v LIST_OF_INGREDIENTS:"plus cheese" TestCases/pizza_shop.robot
                     robot -t "Modify Selected Food" -v OPERATION:"Add" -v TEST_FOOD_INDEX:"340" -v LIST_OF_INGREDIENTS:"extra cheese" TestCases/pizza_shop.robot
-                    robot -t "Modify Selected Food" -v OPERATION:"Add" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v LIST_OF_INGREDIENTS:"plus cheese" TestCases/pizza_shop.robot     
+                         
              
              Modify ingredient : 
-             
-                    robot -t "Modify Selected Food" -v OPERATION:"Edit" -v TEST_FOOD_INDEX:"340" -v TEST_INGREDIENT_NAME:"extra cheese" -v LIST_OF_INGREDIENTS:"no more ingredient" TestCases/pizza_shop.robot
                     robot -t "Modify Selected Food" -v OPERATION:"Edit" -v TEST_FOOD_NAME:"Pizza Ham and Cheese" -v TEST_INGREDIENT_NAME:"ham" -v LIST_OF_INGREDIENTS:"serrano ham" TestCases/pizza_shop.robot
+                    robot -t "Modify Selected Food" -v OPERATION:"Edit" -v TEST_FOOD_INDEX:"340" -v TEST_INGREDIENT_NAME:"extra cheese" -v LIST_OF_INGREDIENTS:"no more ingredient" TestCases/pizza_shop.robot
+                    
              
              Delete ingredient : 
              
