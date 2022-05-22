@@ -1,0 +1,10 @@
+{
+"delete_button_locator_start"         :    "//*[@id='list-recipes']/ul",
+"locator_for_test_food_name_start"    :    "//*[text()='",
+"locator_for_test_food_name_end"      :    "']",
+"locator_for_recipe_name"             :    "//*[@id='create-recipe']/div[1]/div[1]/input",
+"locator_ingredient"                  :    "//*[@id='create-recipe']/div[1]/div[2]/input",
+"locator_for_add_ingredient_button"   :    "//*[@id='create-recipe']/div[1]/div[2]/button",
+"locator_for_submit_recipe_button"    :    "//*[@id='create-recipe']/button",
+"element"                             :    "//*[@id='create-recipe']/div[2]/ul"
+}                                                
